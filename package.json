@@ -1,0 +1,21 @@
+{
+  "name": "testCode",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "ljs",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "comlink": "^4.4.1",
+    "fs": "^0.0.1-security",
+    "koa": "^2.14.2",
+    "koa-body": "^6.0.1",
+    "koa-router": "^12.0.1",
+    "node-fetch": "^3.3.2",
+    "nodemon": "^3.0.1",
+    "path": "^0.12.7",
+    "worker": "^0.4.0"
+  }
+}
