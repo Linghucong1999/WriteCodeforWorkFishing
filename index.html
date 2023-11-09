@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="开始" onclick="start()">
+    <input type="text" oninput="inputtext(value)"></input>
+
+</body>
+<script>
+    function start() {
+        //计算运行时间
+        let start = new Date().getTime();
+        let worker = new Worker("./worker.js");
+        worker.postMessage('start');
+        worker.addEventListener('message', e => {
+            worker.terminate();
+            console.log('运行时间：' + (new Date().getTime() - start) + 'ms');
+            // console.log(e.data);
+        })
+        creatPeopel("start");
+        console.log('运行时间：' + (new Date().getTime() - start) + 'ms');
+
+    }
+
+    function inputtext(value) {
+        console.log(value)
+    }
+    function creatPeopel(data) {
+        if (data === 'start') {
+            let objList = [];
+            for (let i = 0; i < 10000; i++) {
+                let obj = {
+                    name: getRandomName(),
+                    sex: '男',
+                    height: (Math.random() * 200).toFixed(2) + 'cm',
+                    weight: (Math.random() * 200).toFixed(2) + 'kg',
+                    birthday: new Date(),
+                    hobby: '打篮球',
+                    skill: '打篮球',
+                    address: getRandAddr(),
+                }
+                objList.push(obj);
+            }
+            console.log(objList)
+            // postMessage(objList);
+        }
+    }
+    function getRandomName() {
+        let names = ["Alice", "Bob", "Charlie", "David", "Emma"];
+        for (let i = 0; i < 1000; i++) {
+            names.push(names[Math.floor(Math.random() * names.length)] + i);
+        }
+        return names[Math.floor(Math.random() * names.length)];
+    }
+
+    function getRandAddr() {
+        let addr = ["Beijing", "Shanghai", "Guangzhou", "Shenzhen", "Hangzhou"];
+        for (let i = 0; i < 1000; i++) {
+            addr.push(addr[Math.floor(Math.random() * addr.length)] + i);
+        }
+        return addr[Math.floor(Math.random() * addr.length)];
+    }
+
+</script>
+
+</html>
