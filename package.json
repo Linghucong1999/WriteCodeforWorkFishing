@@ -8,6 +8,7 @@
     "dev": "nodemon server.js"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "comlink": "^4.4.1",
     "fs": "^0.0.1-security",
     "koa": "^2.14.2",
