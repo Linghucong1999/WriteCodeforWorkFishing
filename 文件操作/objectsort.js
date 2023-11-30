@@ -1,0 +1,70 @@
+const obj = [
+    {
+        "createdBy": "1391609497449729",
+        "createdAt": 1701250027224,
+        "updatedBy": "1391609497449729",
+        "updatedAt": 1701250027224,
+        "resourceVersion": 0,
+        "id": 177,
+        "footprintId": 5,
+        "edgeId": 1,
+        "metaId": 28,
+        "tableId": 20,
+        "sequenceNo": 0,
+        "tableName": "未命名",
+       
+    },
+    {
+        "tenantId": null,
+        "appId": null,
+        "tableId": 23,
+        "edgeId": 3,
+        "metaId": 31,
+        "tableName": "原材料运输",
+        "calculateFormula": "核算项",
+        "calculateFormulaDisplay": "消耗量",
+        "calculateSign": "+",
+        "gasType": null,
+        "scopeType": "NONE",
+        "decimalScale": null,
+        "isEnergy": 1,
+        "tips": "",
+        "sequenceNo": 2,
+        
+    },
+    {
+        "tenantId": null,
+        "appId": null,
+        "tableId": 22,
+        "edgeId": 3,
+        "metaId": 30,
+        "tableName": "原材料获取",
+        "calculateFormula": "核算项",
+        "calculateFormulaDisplay": "消耗量",
+        "calculateSign": "+",
+        "gasType": null,
+        "scopeType": "NONE",
+        "decimalScale": null,
+        "isEnergy": 1,
+        "tips": "",
+        "sequenceNo": 2,
+        
+    },
+    {
+        "createdBy": "1391609497449729",
+        "createdAt": 1701250027226,
+        "updatedBy": "1391609497449729",
+        "updatedAt": 1701250027226,
+        "resourceVersion": 0,
+        "id": 180,
+        "footprintId": 5,
+        "edgeId": 2,
+        "metaId": 29,
+        "tableId": 21,
+        "sequenceNo": 1,
+        "tableName": "未命名",
+    }
+]
+
+obj.sort((a, b) => { return a.sequenceNo - b.sequenceNo })
+console.log(obj)
