@@ -1,20 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .big-one {
+            height: 200px;
+            width: 200px;
+            border: 1px solid red;
+            /* float: left; */
+            margin-bottom: 50px;
+        }
+
+        .big-two {
+            height: 200px;
+            width: 200px;
+            border: 1px solid red;
+        }
+
+        .big-center {
+
+            /* float: left; */
+            display: flex;
+        }
+
+        .big-center-box {
+            width: 20px;
+            height: 200px;
+            border: 1px solid black;
+            border-left: none;
+        }
+
+        .big-center-title {
+            line-height: 200px;
+        }
+        .big{
+            display: flex;
+            align-items: center;
+
+        }
+    </style>
 </head>
+
 <body>
-    
+
+    <div class="big">
+        <div>
+            <div class="big-one"></div>
+            <div class="big-two"></div>
+        </div>
+        <div class="big-center">
+            <div class="big-center-box"></div>
+            <div class="big-center-title">至少填写一项</div>
+        </div>
+    </div>
 </body>
 <script>
-    let start=new Date().getTime();
-    for(let i=0;i<=10000;i++){
-        console.log(i);
-        
-    }
-    let end=new Date().getTime();
-    console.log('运行时间：' + (end - start) + 'ms');
 </script>
+
 </html>
